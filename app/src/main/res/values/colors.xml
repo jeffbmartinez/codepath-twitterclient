@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="under_limit_color">#00AA00</color>
+    <color name="over_limit_color">#FF0000</color>
+</resources>
