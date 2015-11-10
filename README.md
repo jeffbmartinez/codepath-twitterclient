@@ -6,7 +6,7 @@ It is [Assignment #3](http://courses.codepath.com/courses/intro_to_android/unit/
 
 Submitted by: **Jeff Martinez**
 
-Time spent: ~**5** hours spent in total
+Time spent: ~**8** hours spent in total
 
 ## User Stories
 
