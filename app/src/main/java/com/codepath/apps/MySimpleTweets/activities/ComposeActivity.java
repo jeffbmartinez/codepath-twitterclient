@@ -57,7 +57,7 @@ public class ComposeActivity extends AppCompatActivity {
                 public void onSuccess(int statusCode, Header[] headers, JSONObject json) {
                     Tweet tweet = Tweet.fromJSON(json);
 
-                    Toast.makeText(ComposeActivity.this, "Posted new status :) (" + tweet.getUid() + ")", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ComposeActivity.this, "Posted new status :)", Toast.LENGTH_SHORT).show();
 
                     Intent data = new Intent();
                     data.putExtra(TimelineActivity.NEW_TWEET_KEY, tweet);

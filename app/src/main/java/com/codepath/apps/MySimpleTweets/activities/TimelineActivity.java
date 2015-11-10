@@ -52,7 +52,7 @@ public class TimelineActivity extends AppCompatActivity {
             @Override
             public boolean onLoadMore(int page, int totalItemsCount) {
                 populateTimeline();
-                Toast.makeText(TimelineActivity.this, "Scrolling past...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TimelineActivity.this, "Getting more tweets...", Toast.LENGTH_SHORT).show();
                 return true;
             }
         };
