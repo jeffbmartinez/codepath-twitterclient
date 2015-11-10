@@ -36,7 +36,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [X] Remaining tweeet characters changes color when the tweet has exceeded the 140 character limit.
+* [X] Remaining tweet characters changes color when the tweet has exceeded the 140 character limit.
 
 ## Video Walkthrough
 
