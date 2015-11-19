@@ -46,6 +46,7 @@ GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 * [James Smith's Android Asynchronous Http Client](http://loopj.com/android-async-http/)
 * [Square's Picasso](http://square.github.io/picasso/)
+* [Andreas Stütz's PagerSlidingTabStrip](https://github.com/astuetz/PagerSlidingTabStrip)
 
 ## License
 
