@@ -41,8 +41,6 @@ public class TimelineActivity extends AppCompatActivity {
 
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabStrip.setViewPager(vpPager);
-
-        Log.d("DEBUG", "Current fragment: " + vpPager.getAdapter().getPageTitle(vpPager.getCurrentItem()));
     }
 
     @Override
