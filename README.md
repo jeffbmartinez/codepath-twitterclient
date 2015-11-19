@@ -21,7 +21,7 @@ The following **required** functionality is completed:
 * [X] User can **click on the profile image** in any tweet to see **another user's** profile
     * [X] User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
     * [X] Profile view should include that user's timeline
-    * [] Optional: User can view following / followers list through the profile
+    * [ ] Optional: User can view following / followers list through the profile
 * [X] Users can [infinitely paginate](http://guides.codepath.com/android/Endless-Scrolling-with-AdapterViews) any of these timelines (home, mentions, user) by scrolling to the bottom
 
 ## Video Walkthrough
