@@ -70,6 +70,26 @@ public class TwitterClient extends OAuthBaseClient {
         Log.d("DEBUG", "\n");
     }
 
+    public void getUserTimeline(String screenName, long oldestTweetIdRetrieved, AsyncHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("statuses/user_timeline.json");
+
+        RequestParams params = new RequestParams();
+        params.put("count", NUM_TWEETS_TO_RETRIEVE);
+        params.put("screen_name", screenName);
+
+        if (oldestTweetIdRetrieved != NULL_TWEET_ID) {
+            params.put("max_id", oldestTweetIdRetrieved - 1);
+        }
+
+        getClient().get(apiUrl, params, handler);
+    }
+
+    public void getUserInfo(AsyncHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("account/verify_credentials.json");
+
+        getClient().get(apiUrl, null, handler);
+    }
+
     public void getTweet(int tweetID, AsyncHttpResponseHandler handler) {
         String apiUrl = getApiUrl("statuses/show.json");
 

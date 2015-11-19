@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.codepath.apps.MySimpleTweets.R;
 import com.codepath.apps.MySimpleTweets.TweetsArrayAdapter;
-import com.codepath.apps.MySimpleTweets.activities.TimelineActivity;
 import com.codepath.apps.MySimpleTweets.listeners.EndlessScrollListener;
 import com.codepath.apps.MySimpleTweets.models.Tweet;
 
@@ -35,7 +34,6 @@ public abstract class TweetsListFragment extends Fragment {
         endlessScrollListener = new EndlessScrollListener() {
             @Override
             public boolean onLoadMore(int page, int totalItemsCount) {
-                TimelineActivity timelineActivity = (TimelineActivity) getActivity();
                 populateTimeline();
                 Toast.makeText(getActivity(), "Getting more tweets...", Toast.LENGTH_SHORT).show();
                 return true;

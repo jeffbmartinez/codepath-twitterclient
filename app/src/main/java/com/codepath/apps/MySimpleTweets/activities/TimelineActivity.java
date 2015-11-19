@@ -57,13 +57,20 @@ public class TimelineActivity extends AppCompatActivity {
         startActivityForResult(compose, COMPOSE_TWEET);
     }
 
+    public void onProfileAction(MenuItem item) {
+        Intent profile = new Intent(this, ProfileActivity.class);
+        startActivity(profile);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == COMPOSE_TWEET && resultCode == RESULT_OK) {
             TweetsListFragment tweetsListFragment = (TweetsListFragment) tweetsPagerAdapter.getItem(HOME_TIMELINE_FRAGMENT_ID);
 
-            Tweet newTweet = (Tweet) data.getExtras().getSerializable(NEW_TWEET_KEY);
-            tweetsListFragment.insert(newTweet, 0);
+            if (data != null) {
+                Tweet newTweet = (Tweet) data.getExtras().getSerializable(NEW_TWEET_KEY);
+                tweetsListFragment.insert(newTweet, 0);
+            }
         }
     }
 

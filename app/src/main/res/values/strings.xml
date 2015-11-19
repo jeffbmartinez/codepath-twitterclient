@@ -7,5 +7,6 @@
     <string name="menu_compose">Compose</string>
     <string name="compose_label">What\'s on your mind?</string>
     <string name="submit_label">Submit</string>
+    <string name="menu_profile">profile</string>
 
 </resources>
