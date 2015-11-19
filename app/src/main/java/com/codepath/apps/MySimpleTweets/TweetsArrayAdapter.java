@@ -1,7 +1,7 @@
 package com.codepath.apps.MySimpleTweets;
 
 import android.content.Context;
-import android.util.Log;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.codepath.apps.MySimpleTweets.activities.ProfileActivity;
 import com.codepath.apps.MySimpleTweets.models.Tweet;
 import com.squareup.picasso.Picasso;
 
@@ -42,7 +43,10 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         ivProfileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("DEBUG", "clicked " + v.getTag().toString());
+                Intent profile = new Intent(getContext(), ProfileActivity.class);
+                String screenName = (String) v.getTag();
+                profile.putExtra("screenName", screenName);
+                getContext().startActivity(profile);
             }
         });
         Picasso.with(getContext()).load(tweet.getUser().getProfileImageUrl()).into(ivProfileImage);

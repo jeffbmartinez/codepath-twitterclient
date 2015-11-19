@@ -6,7 +6,7 @@ It is [Assignment #4](http://courses.codepath.com/courses/intro_to_android/unit/
 
 Submitted by: **Jeff Martinez**
 
-Time spent: ~**5** hours spent in total
+Time spent: ~**6** hours spent in total
 
 ## User Stories
 
@@ -18,15 +18,21 @@ The following **required** functionality is completed:
     * [X] User can view their recent mentions of their username
 * [X] User can navigate to **view their own profile**
     * [X] User can see picture, tagline, # of followers, # of following, and tweets on their profile.
-* [] User can **click on the profile image** in any tweet to see **another user's** profile
-    * [] User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
-    * [] Profile view should include that user's timeline
+* [X] User can **click on the profile image** in any tweet to see **another user's** profile
+    * [X] User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
+    * [X] Profile view should include that user's timeline
     * [] Optional: User can view following / followers list through the profile
 * [X] Users can [infinitely paginate](http://guides.codepath.com/android/Endless-Scrolling-with-AdapterViews) any of these timelines (home, mentions, user) by scrolling to the bottom
 
 ## Video Walkthrough
 
-![Video Walkthrough 1](walkthrough.gif)
+### Walkthrough for homework 4 (built on top of homework 3)
+
+![Video Walkthrough for homework 4](walkthrough_hw4.gif)
+
+### Walkthrough for homework 3
+
+![Video Walkthrough for homework 3](walkthrough.gif)
 
 GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -34,7 +40,7 @@ GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 ### Challenges encountered
 
-* ...
+* Took me a bit of research to figure out how to hook up the click for the individual images, but not the entire list item. Using the get and set Tag methods was very useful for this.
 
 ## Open Source Libraries Used
 

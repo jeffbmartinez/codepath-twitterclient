@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,21 +29,13 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         client = TwitterApplication.getRestClient();
-        client.getUserInfo(new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                user = User.fromJSON(response);
-
-                ActionBar actionBar = getSupportActionBar();
-                if (actionBar != null) {
-                    actionBar.setTitle("@" + user.getScreenName());
-                }
-
-                populateProfileHeader(user);
-            }
-        });
 
         String screenName = getIntent().getStringExtra("screenName");
+        if (screenName == null) {
+            showSelfProfile();
+        } else {
+            showProfileForScreenName(screenName);
+        }
 
         UserTimelineFragment fragmentUserTimeline = UserTimelineFragment.newInstance(screenName);
 
@@ -71,5 +64,47 @@ public class ProfileActivity extends AppCompatActivity {
 
         ImageView ivProfileImage = (ImageView) findViewById(R.id.ivProfileImage);
         Picasso.with(this).load(user.getProfileImageUrl()).into(ivProfileImage);
+    }
+
+    private void showSelfProfile() {
+        client.getUserInfo(new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                user = User.fromJSON(response);
+
+                ActionBar actionBar = getSupportActionBar();
+                if (actionBar != null) {
+                    actionBar.setTitle("@" + user.getScreenName());
+                }
+
+                populateProfileHeader(user);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                Log.d("DEBUG", "Failure: " + statusCode + " " + responseString);
+            }
+        });
+    }
+
+    private void showProfileForScreenName(String screenName) {
+        client.getUserInfoByScreenName(screenName, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                user = User.fromJSON(response);
+
+                ActionBar actionBar = getSupportActionBar();
+                if (actionBar != null) {
+                    actionBar.setTitle("@" + user.getScreenName());
+                }
+
+                populateProfileHeader(user);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                Log.d("DEBUG", "Failure: " + statusCode + " " + responseString);
+            }
+        });
     }
 }
